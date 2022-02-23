@@ -11,7 +11,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_start_a_list_and_retrieve_it_later(self):
         #A peson goes to the website 'http://localhost:8000
         self.browser.get('http://localhost:8000')
-
+        time.sleep(1)
         #They are treated with page with To-Do lists on the Title
         self.assertIn('To-Do lists',self.browser.title)
 
@@ -38,8 +38,8 @@ class NewVisitorTest(unittest.TestCase):
         #They check whether their task is added in the list or not
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
-        self.assertIn('2: Use peacock feathers to make a fly', [row.text for row in rows])
+        #self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
+        #self.assertIn('2: Use peacock feathers to make a fly', [row.text for row in rows])
         #PROGRAMMER DELIBERATELY FAILING THE TEST
         self.fail('Finish the test!')
 
